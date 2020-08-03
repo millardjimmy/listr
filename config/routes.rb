@@ -1,28 +1,33 @@
 Rails.application.routes.draw do
+  # Write Custom Routes Here
+  # Home Page
+  root 'static#home'
 
+  # Signup
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
 
-  resources :users, only: [] do
-    resources :categories, only: [:new, :edit, :create, :update, :destroy, :show] do
-      resources :lists, only: [:new, :edit, :create, :update, :destroy, :show] do
-        resources :tasks, only: [:new, :edit, :create, :update, :destroy]
+  # Signout
+  delete '/signout' => 'sessions#destroy'
 
+  # Signin
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
 
-      end
-    end
+  # Google Auth
+  get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
+
+  # Nested Route
+  resources :categories, only: [:index, :new, :create] do
+    resources :questions, only: [:index, :new, :create]
   end
-  
-  # resources :tasks
-  # resources :tags
-  # resources :cotegories
-  # resources :comments
-  # resources :users
-  # resources :lists
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # get '/users/:id', to: 'application#show', as: 'user'
-  # root 'application#hello'
+
+  resources :users, only: [:index, :new, :create, :show] do
+    resources :questions, only: [:index, :new, :create, :edit, :destroy]
+  end
+
+  resources :questions do
+    resources :comments
+  end
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
