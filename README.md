@@ -1,6 +1,6 @@
 # README
-(https://imgur.com/Ihypwqm.jpg)
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/rE8037g" data-context="false" ><a href="//imgur.com/a/rE8037g"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src="https://imgur.com/Ihypwqm.jpg'>
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
