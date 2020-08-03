@@ -1,7 +1,7 @@
 listr
 Jenn - why does current user path route using . not /
 
-
+todo- google oauth
 
 
 
