@@ -1,0 +1,12 @@
+<h1>New Comment</h2>
+
+<%= render partial: "shared/errors", locals: {object: @comment} %>
+
+<%= form_for ([@question,@comment]) do |f| %>
+    <%= f.hidden_field :question_id %>
+    <%= f.label :content, "New Comment" %>:
+    <br>
+    <%= f.text_area :content %>
+    <br>
+    <%= f.submit %>
+<% end %>
