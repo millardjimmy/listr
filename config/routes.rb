@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :new, :create, :show] do
-    resources :questions, only: [:index, :new, :create, :edit, :destroy]
+    #resources :questions, only: [:edit, :destroy]
   end
 
   resources :questions do
