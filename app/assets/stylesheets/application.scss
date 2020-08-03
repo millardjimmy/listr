@@ -40,6 +40,9 @@
 
 body {
     text-align: center;
+    background: #ffffff;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #ffffff, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 1200px
 }
 form {
     display: inline-block;
