@@ -5,7 +5,7 @@
 
 Ask a Parent was born out of the desire to create fellowship, helpful, and downright entertaining community solutions. Ask a Parent is intended to be  used as a discussion forum and long form chat room. I couldn't be happier you've decided to use Ask a Parent to grow your community.
 
-<img src="https://imgur.com/undefined.jpg">
+<img src="https://imgur.com/QZfFYaQ.jpg">
 
 ## Getting Started
 
