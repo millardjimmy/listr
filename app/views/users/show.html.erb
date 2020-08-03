@@ -1,0 +1,17 @@
+<h1><%= @user.username.capitalize %>'s Profile:</h1>
+<br>
+<br>
+<h2>questions:</h2>
+<% @questions.each do |f| %>
+    <li><%= link_to f.title, question_path(f)%></li>
+    <br>
+<% end %>
+<br>
+
+<h3>Comments:</h3>
+
+<% @user.comments.each do |f| %>
+    <li><%= link_to f.content, question_path(f.question_id) %></li>
+    <br>
+<% end %>
+
