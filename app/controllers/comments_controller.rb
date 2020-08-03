@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
         if params[:question_id] && @question = Question.find_by_id(params[:question_id])
             @comment = @question.comments.build
         else
-            @comment = Comment.new 
+            redirect_to questions_path
         end
     end
 
