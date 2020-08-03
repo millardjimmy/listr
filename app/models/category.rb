@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :user
-  has_many :lists
-  has_many :tasks, through: :lists
+    has_many :questions
+    validates :name, presence: :true 
+    validates_uniqueness_of :name, message: "that category has already been created."
 end

@@ -1,10 +1,23 @@
 class User < ApplicationRecord
-    has_many :categories
-    has_many :lists, through: :categories
-    has_many :tasks, through: :lists
+    has_many :questions
+    has_many :categories, through: :questions
+    has_many :comments
+    has_many :commented_posts, through: :comments, source: :question
+
     has_secure_password
 
-    validates :name, presence: true
-    validates :username, presence: true
-    validates :username, uniqueness: true
+    validates :email, uniqueness: true 
+    validates :username, :email, presence: true 
+
+    scope :ordered_by_username, -> {order(username: :asc)}
+
+    
+    def self.create_from_omniauth(auth)
+        User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+            u.username = auth['info']['first_name']
+            u.email = auth['info']['email']
+            u.password = SecureRandom.hex(16)
+        end
+    end
+
 end
