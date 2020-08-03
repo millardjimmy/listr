@@ -1,6 +1,6 @@
 <%= render partial: "shared/errors", locals: {object: @question} %>
 <hr>
-<p>Author: <%= link_to @question.user.username, user_path(@question) %>
+<p>Author: <%= link_to @question.user.username, user_path(@question.user) %>
 Category: <%= link_to @question.category.name, category_questions_path(@question.category) %></p>
 
 <h1>Title: <%= @question.title %></h1>
@@ -9,8 +9,8 @@ Category: <%= link_to @question.category.name, category_questions_path(@question
 
 <br>
 
-<% if authorized? %>
-  <%= link_to "Edit question", edit_user_question_path(@question)%> | 
+<% if authorized? %> #helper method potentially
+  <%= link_to "Edit question", edit_question_path(@question)%> | 
   <%= link_to "Delete question", question_path(@question), method: 'delete'%>
 <% end %>
 <hr>
