@@ -1,0 +1,14 @@
+<%= render partial: "shared/errors", locals: {object: @question} %>
+
+<%= form_for([@category, @question]) do |f| %>
+    <%= f.label :title, "question:" %>
+    <%= f.text_field :title%>
+    <br>
+    <%= f.label :content, "Details:" %>
+    <%= f.text_area :content %>
+    <br>
+    <%= f.label :category, "Category:" %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+    <br>
+    <%= f.submit %>
+<% end %>
