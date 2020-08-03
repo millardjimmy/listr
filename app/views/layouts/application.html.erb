@@ -1,15 +1,50 @@
+
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>Listr</title>
+    <title>Ask a Parent</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <b4-body>
+  <header role="banner">
+  <%= image_tag('logo.PNG', alt: 'logo') %><br>
 
+    <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-primary-collapse">
+      <ul class="nav navbar-nav">
+        <% if signed_in? %>
+
+          <%= link_to image_tag("profile.PNG"), users_path(current_user) %>
+          <%= link_to image_tag("newquestion.PNG"), new_question_path %>
+          <%= link_to image_tag("allquestions.PNG"), questions_path %>
+          <%= link_to image_tag("categories.PNG"), categories_path %>
+          <%= link_to image_tag("users.PNG"), users_path %>
+          <%= link_to image_tag("signout.PNG"), signout_path, method: "delete" %>
+
+        <% else %>
+          <li class="active"><%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "Sign In", signin_path %></li>
+          <li><%= link_to "Categories", categories_path %></li>
+          <li><%= link_to "Newest Questions", questions_path %></li>
+          <li><%= link_to "All Users", users_path %></li>
+          
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header><!-- header role="banner" -->
   <body>
+    
     <%= yield %>
   </body>
 </html>
