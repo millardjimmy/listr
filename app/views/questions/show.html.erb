@@ -1,0 +1,37 @@
+<%= render partial: "shared/errors", locals: {object: @question} %>
+<hr>
+<p>Author: <%= link_to @question.user.username, user_path(@question) %>
+Category: <%= link_to @question.category.name, category_questions_path(@question.category) %></p>
+
+<h1>Title: <%= @question.title %></h1>
+<h4> <%= @question.content %> </h4>
+
+
+<br>
+
+<% if authorized? %>
+  <%= link_to "Edit question", edit_user_question_path(@question)%> | 
+  <%= link_to "Delete question", question_path(@question), method: 'delete'%>
+<% end %>
+<hr>
+<br>
+<br>
+<%= link_to "Add New Comment", new_question_comment_path(@question) %>
+
+
+
+      <% @question.comments.reverse.each do |c| %>
+      <div class="ui comments">
+        <h3 class="ui dividing header">Comment</h3>
+        <div class="comment">
+          <div class="content">
+            <a class="author"> Username: <%= link_to c.user.username, user_path(c) %>  </a>
+            <br>
+            <div class="text">
+              Comment: <%= c.content %>
+            </div>
+          
+          </div>
+        </div>
+      
+      <% end %>
