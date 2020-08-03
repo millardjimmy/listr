@@ -23,7 +23,7 @@
       <ul class="nav navbar-nav">
         <% if signed_in? %>
 
-          <%= link_to image_tag("profile.PNG"), users_path(current_user) %>
+          <%= link_to image_tag("profile.PNG"), user_path(current_user) %>
           <%= link_to image_tag("newquestion.PNG"), new_question_path %>
           <%= link_to image_tag("allquestions.PNG"), questions_path %>
           <%= link_to image_tag("categories.PNG"), categories_path %>

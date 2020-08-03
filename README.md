@@ -33,7 +33,7 @@ For interactive console
 
 ## Built With
 
-* [Ruby on Rails](https://github.com/rails/rails)  — Back end API is a Rails app. It responds to requests RESTfully in JSON.
+* [Ruby on Rails](https://github.com/rails/rails)  — Back end. It responds to requests RESTfully in JSON.
 * [Bundler](https://bundler.io/) - Dependency Management
 
 
@@ -43,4 +43,4 @@ For interactive console
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
