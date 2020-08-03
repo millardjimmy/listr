@@ -1,0 +1,25 @@
+<h1>Sign In!</h2>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+    <br>
+
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <br>
+    
+    <%= submit_tag "Sign In" %>
+
+<% end %>
+
+<br>
+<p>Or</p>
+<br>
+<%= button_to "Sign in with Google", '/auth/google_oauth2' %>
