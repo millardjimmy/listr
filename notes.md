@@ -1,4 +1,12 @@
 listr
+Jenn - why does current user path route using . not /
+
+
+
+
+
+
+
 
 list
 has many tasks
