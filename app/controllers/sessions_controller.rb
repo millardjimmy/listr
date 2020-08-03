@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
     def omniauth  #log users in with omniauth
         user = User.create_from_omniauth(auth)
-        if user.valid?
+        if user.save!   #valid?
             session[:user_id] = user.id
             redirect_to user
         else
