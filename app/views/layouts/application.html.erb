@@ -30,12 +30,12 @@
           <%= link_to image_tag("users.PNG"), users_path %>
           <%= link_to image_tag("signout.PNG"), signout_path, method: "delete" %>
 
-        <% else %>
+        <% else %><hr>
           <li class="active"><%= link_to "Sign Up", signup_path %></li>
-          <li><%= link_to "Sign In", signin_path %></li>
+          <li><%= link_to "Sign In", signin_path %></li><hr>
           <li><%= link_to "Categories", categories_path %></li>
           <li><%= link_to "Newest Questions", questions_path %></li>
-          <li><%= link_to "All Users", users_path %></li>
+          <li><%= link_to "All Users", users_path %></li><hr>
           
         <% end %>
       </ul>
