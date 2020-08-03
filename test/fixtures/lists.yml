@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  list_name: MyString
+  list_desc: MyString
+  user: one
+  category: one
+
+two:
+  list_name: MyString
+  list_desc: MyString
+  user: two
+  category: two
