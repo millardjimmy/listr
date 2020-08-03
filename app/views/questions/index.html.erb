@@ -1,0 +1,12 @@
+<%= questions_header %>
+
+<% @questions.reverse.each do |p| %>
+    Title: <%= link_to p.title, question_path(p) %>
+    <br>
+    <br>
+    Asked By: <%= link_to p.user.username, user_path(p.user) %></li>
+    <br>
+    _____________________________________________
+    <br>
+    <br>
+<% end %>
