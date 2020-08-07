@@ -1,9 +1,10 @@
 <h1>All Categories</h1>
 
-<h3><%= link_to "Add new Category", new_category_path %><h3>
-<br>
+<h3><%= link_to "Add new Category", new_category_path %></h3>
 
-<br>
+<h4><%= link_to "What's the most popular category?", popular_path %></h4>
+
+
 <% @categories.each do |f| %>
     <li><%= link_to f.name, category_questions_path(f) %></li>
     <li><%= link_to "Add new question", new_category_question_path(f) %></li>

@@ -18,10 +18,9 @@ class CategoriesController < ApplicationController
         end
     end
 
-    def popular_category
-        cat = Category.find(session[:category_id])
-        @popular_cat = cat.categories.most_popular_cat
-    end
+    def popular
+        @categories = Category.most_popular
+     end
 
 private
 

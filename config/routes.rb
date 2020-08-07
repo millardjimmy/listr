@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   # Google Auth
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
+  get '/categories/popular', to: 'categories#popular', as: 'popular'
+
   # Nested Route
   resources :categories, only: [:index, :new, :create] do
     resources :questions, only: [:index, :new, :create]
