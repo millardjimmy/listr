@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :questions
+    has_many :questions, dependent: :destroy
     has_many :categories, through: :questions
     has_many :comments
     has_many :commented_posts, through: :comments, source: :question
