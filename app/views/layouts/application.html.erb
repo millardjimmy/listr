@@ -12,7 +12,7 @@
   </head>
   <b4-body>
   <header role="banner">
-  <%= image_tag('logo.PNG', alt: 'logo') %><br>
+  <%= link_to image_tag('logo.PNG', alt: 'logo'), root_path %><br>
 
     <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
@@ -37,7 +37,7 @@
           <li><%= link_to "Categories", categories_path %></li>
           <li><%= link_to "Newest Questions", questions_path %></li>
           <li><%= link_to "All Users", users_path %></li><hr>
-          
+         
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
