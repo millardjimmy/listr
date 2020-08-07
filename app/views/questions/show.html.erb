@@ -9,9 +9,9 @@ Category: <%= link_to @question.category.name, category_questions_path(@question
 
 <br>
 
-<% if authorized? %> #helper method potentially
+<% if authorized? %> 
   <%= link_to "Edit question", edit_question_path(@question)%> | 
-  <%= link_to "Delete question", question_path(@question), method: 'delete'%>
+  <%= link_to "Delete question", question_path(@question.id), method: 'delete'%>
 <% end %>
 <hr>
 <br>
