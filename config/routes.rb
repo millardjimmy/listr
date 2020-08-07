@@ -21,9 +21,10 @@ Rails.application.routes.draw do
     resources :questions, only: [:index, :new, :create]
   end
 
-  resources :users, only: [:index, :new, :create, :show] do
+  resources :users, only: [:index, :new, :create, :show]
     #resources :questions, only: [:edit, :destroy]
-  end
+  
+
 
   resources :questions do
     resources :comments
